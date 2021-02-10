@@ -46,4 +46,5 @@ TODO:
 - there aren't actually that many secondhand listing sites right? So maybe it makes less sense to optimize for versatility at the expense of fine-tuning, and makes more sense to hardcode specialized handling of a few common sites like craigslist, ksl, nextdoor, etc. Then it can work REALLY well for a few likely cases instead of pretty well for 'all' cases
 - ksl & FB already have "alert me" functionality so....
 - set up for friendlier sharing--README, .env.example and .config.example
+- add email as alternate notification method
 */

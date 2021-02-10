@@ -1,0 +1,37 @@
+{
+  "intervalInMinutes": 2,
+  "shouldSendMessages": false,
+  "twilioFrom": "",
+  "twilioTo": "",
+  "sitesToWatch": [
+    {
+      "name": "Craigslist",
+      "needsLogin": false,
+      "searchConfig": {
+        "searchUrl": "https://boise.craigslist.org/search/sss",
+        "appendedQueryParams": ["srchType=T"],
+        "linksSelector": ".result-title",
+        "titlesSelector": null
+      }
+    },
+    {
+      "name": "Nextdoor",
+      "needsLogin": true,
+      "loginConfig": {
+        "loginUrl": "https://nextdoor.com/login",
+        "username": "",
+        "pw": "",
+        "usernameSelector": "#id_email",
+        "pwSelector": "#id_password",
+        "submitSelector": "#signin_button",
+        "successSelector": ".avatar-image"
+      },
+      "searchConfig": {
+        "searchUrl": "https://nextdoor.com/for_sale_and_free",
+        "appendedQueryParams": [],
+        "linksSelector": ".classified-item-card-container",
+        "titlesSelector": ".classified-item-card-title"
+      }
+    }
+  ]
+}
