@@ -26,9 +26,7 @@ const watch = async (
     if (needsLogin) {
       try {
         await logIn(page, name, loginConfig);
-        logger(name, `Logged in!`);
       } catch (error) {
-        logger(name, `error in login step: `, error);
         reject(error);
         // TODO on all these catch blocks, figure out a way to gracefully handle the error for the current watcher w/o terminating whole process
       }
