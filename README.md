@@ -29,7 +29,7 @@ Set up `config.json` with main app settings, using the `sitesToWatch` field for 
       "searchConfig": {
         "searchUrl": "https://boise.craigslist.org/search/sss", // main search url
         "appendedQueryParams": ["srchType=T"], // query params to narrow or modify search as desired. Optional; can be left empty. This example tells Craigslist to only search within titles, not descriptions, and yields more relevant results
-        "linksSelector": ".result-title", // css selector for anchor tag--app will grab hrefs from results
+        "linksSelector": ".result-title", // css selector for anchor tag--app will grab hrefs from here
         "titlesSelector": null // css selector for listing titles--app will grab innerHTML from here. Craigslist's links and titles are one and the same so this is null
       }
     },
@@ -72,3 +72,13 @@ To take the app for a single-run spin with no recurring interval, use
 ```
 yarn watch-once itemYouWantToSearch
 ```
+
+## Notification texts through twilio
+
+Run:
+
+```
+cp .env.example .env
+```
+
+Then add Twilio API key deets to `.env`, then set phone numbers and `shouldSendMessages` in `config.json`.
