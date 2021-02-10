@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Watch secondhand for-sale sites for new listings and get notified",
   "main": "index.js",
+  "engines": {"node" : ">=14.0.0"},
   "scripts": {
     "start": "node index.js -t",
     "test": "jest",

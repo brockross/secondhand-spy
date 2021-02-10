@@ -14,7 +14,7 @@ const watch = async (
 ) => {
   return new Promise(async (resolve, reject) => {
     // init browser
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch({ headless: config.runHeadless });
     const context = browser.defaultBrowserContext();
     const siteHostname = new URL(searchConfig.searchUrl).hostname;
     context.overridePermissions(`https://${siteHostname}`, []);
@@ -46,6 +46,7 @@ const watch = async (
     );
     try {
       await page.waitForSelector(searchConfig.linksSelector);
+      await page.waitForTimeout(5000);
     } catch (error) {
       logger(name, `no results found for "${searchTerm}" search.`);
       reject(error);
@@ -60,6 +61,7 @@ const watch = async (
         const listings = {};
 
         selection.forEach((qsaSelection) => {
+          console.log(`***debug | qsaSelection: `, qsaSelection);
           const title = searchConfig.titlesSelector
             ? qsaSelection.querySelectorAll(searchConfig.titlesSelector)[0]
                 .innerHTML
@@ -126,7 +128,7 @@ const watch = async (
     }
 
     logger(name, "Done.");
-    browser.close();
+    // browser.close();
   });
 };
 

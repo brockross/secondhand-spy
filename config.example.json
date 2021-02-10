@@ -1,8 +1,8 @@
 {
-  "intervalInMinutes": 2,
   "shouldSendMessages": false,
   "twilioFrom": "",
   "twilioTo": "",
+  "runHeadless": true,
   "sitesToWatch": [
     {
       "name": "Craigslist",

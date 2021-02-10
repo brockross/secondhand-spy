@@ -16,7 +16,7 @@ program
 program.parse(process.argv);
 const options = program.opts();
 
-const searchTerm = options.searchTerm || "treadmill";
+const searchTerm = options.searchTerm;
 
 // start yer engines
 console.log(chalk.green.bold("the machine rumbles to life..."));
