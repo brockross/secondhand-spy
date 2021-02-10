@@ -1,8 +1,4 @@
 {
-  "shouldSendMessages": false,
-  "twilioFrom": "",
-  "twilioTo": "",
-  "runHeadless": true,
   "sitesToWatch": [
     {
       "name": "Craigslist",
@@ -33,5 +29,9 @@
         "titlesSelector": ".classified-item-card-title"
       }
     }
-  ]
+  ],
+  "shouldSendMessages": false,
+  "twilioFrom": "",
+  "twilioTo": "",
+  "runHeadless": true
 }

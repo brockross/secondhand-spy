@@ -18,10 +18,6 @@ Set up `config.json` with main app settings, using the `sitesToWatch` field for 
 
 ```
 {
-  "shouldSendMessages": false, // toggle sending new listing notifications via text. Requires free twilio account. If this is false new listings just get logged to the console
-  "twilioFrom": "", // twilio account phone number
-  "twilioTo": "", // phone number notification texts will be sent to
-  "runHeadless": true, // if false, puppeteer will open a chromium browser so you can watch navigation
   "sitesToWatch": [
     {
       "name": "Craigslist", // used for reference; this can be whatever you want
@@ -52,7 +48,11 @@ Set up `config.json` with main app settings, using the `sitesToWatch` field for 
         "titlesSelector": ".classified-item-card-title"
       }
     }
-  ]
+  ],
+  "shouldSendMessages": false, // toggle sending new listing notifications via text. Requires free twilio account. If this is false new listings just get logged to the console
+  "twilioFrom": "", // twilio account phone number
+  "twilioTo": "", // phone number notification texts will be sent to
+  "runHeadless": true, // if false, puppeteer will open a chromium browser so you can watch navigation
 }
 ```
 
