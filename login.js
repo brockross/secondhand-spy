@@ -1,5 +1,5 @@
 const fs = require("fs");
-const { logger, getCookies } = require("./helpers");
+const { logger, setCookies, getCookies } = require("./helpers");
 
 const logIn = async (
   page,
@@ -41,7 +41,7 @@ const logIn = async (
     }
 
     let currentCookies = await page.cookies();
-    fs.writeFileSync(cookiesPath, JSON.stringify(currentCookies));
+    setCookies(cookiesPath, JSON.stringify(currentCookies));
     return "success";
     // TODO figure out the right way to signify success in a promisey way
   } else {

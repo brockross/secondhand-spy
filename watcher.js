@@ -2,10 +2,9 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 
 const logIn = require("./login.js");
-const { logger, getPrevListings } = require("./helpers");
-const sendText = require("./send-text.js");
-
+const { logger, getPrevListings, setNewListings } = require("./helpers");
 const config = require("./config.json");
+const sendText = config.shouldSendMessages ? require("./send-text.js") : null;
 
 const watch = async (
   searchTerm,
@@ -105,7 +104,7 @@ const watch = async (
       .filter(Boolean);
 
     // write current listings to disk
-    fs.writeFileSync(listingsPath, JSON.stringify(listings));
+    setNewListings(listingsPath, JSON.stringify(listings));
 
     // if there are new items, send a text
     if (newItems.length) {
