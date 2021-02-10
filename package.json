@@ -1,0 +1,23 @@
+{
+  "name": "secondhand-spy",
+  "version": "0.1.0",
+  "description": "Watch secondhand for-sale sites for new listings and get notified",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js -t",
+    "test": "jest",
+    "watch": "yarn start",
+    "watch-once": "node index.js --once -t"
+  },
+  "author": "brock ross",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.0.0",
+    "dotenv": "^8.2.0",
+    "lodash": "^4.17.20",
+    "node-cron": "^2.0.3",
+    "puppeteer": "^5.5.0",
+    "twilio": "^3.55.0"
+  }
+}
